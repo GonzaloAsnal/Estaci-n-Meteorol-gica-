@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTACIÓN METEOROLÓGICA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .parametro {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .parametro:hover {
+            transform: translateY(-5px);
+        }
+
+        .parametro h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .valor {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .unidad {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .descripcion {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 10px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .update-info {
+            text-align: center;
+            margin: 10px 0;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .valor {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ESTACIÓN METEOROLÓGICA</h1>
+        <p class="subtitle">Monitoreo en tiempo real</p>
+    </header>
+
+    <div class="container">
+        <!-- Anemómetro -->
+        <div class="parametro">
+            <h2>Anemómetro</h2>
+            <div class="valor">!!Anemometro!! <span class="unidad">km/h</span></div>
+            <p class="descripcion">Velocidad del viento medida</p>
+        </div>
+
+        <!-- Pluviómetro -->
+        <div class="parametro">
+            <h2>Pluviómetro</h2>
+            <div class="valor">!!Pluviometro!! <span class="unidad">mm</span></div>
+            <p class="descripcion">!!Clima!!</p>
+        </div>
+
+        <!-- Veleta -->
+        <div class="parametro">
+            <h2>Veleta</h2>
+            <div class="valor">!!Veleta!! </div>
+            <p class="descripcion">Dirección del viento actual</p>
+        </div>
+
+        <!-- Temperatura -->
+        <div class="parametro">
+            <h2>Temperatura</h2>
+            <div class="valor">!!Temperatura!! <span class="unidad">°C</span></div>
+            <p class="descripcion">Temperatura actual del sensor interno</p>
+        </div>
+
+        <!-- Humedad -->
+        <div class="parametro">
+            <h2>Humedad</h2>
+            <div class="valor">!!Humedad!! <span class="unidad">%</span></div>
+            <p class="descripcion">Humedad relativa del aire</p>
+        </div>
+
+        <!-- Detector de partículas -->
+        <div class="parametro">
+            <h2>Detector de partículas</h2>
+            <div class="valor">!!Particulas!! <span class="unidad">µg/m³</span></div>
+            <p class="descripcion">!!Particulado!!</p>
+        </div>
+
+        <!-- Sensor de gas -->
+        <div class="parametro">
+            <h2>Sensor de gas</h2>
+            <div class="valor">!!Gas!! <span class="unidad">ppm</span></div>
+            <p class="descripcion">!!Gasificado!!</p>
+        </div>
+
+        <!-- Sensor de presión -->
+        <div class="parametro">
+            <h2>Sensor de presión</h2>
+            <div class="valor">!!Presion!! <span class="unidad">hPa</span></div>
+            <p class="descripcion">Presión atmosférica actual</p>
+        </div>
+
+        <!-- Sensor UV -->
+        <div class="parametro">
+            <h2>Sensor UV</h2>
+            <div class="valor">!!UV!! <span class="unidad">UVI</span></div>
+            <p class="descripcion">Índice ultravioleta actual</p>
+        </div>
+
+        <!-- Decibelímetro -->
+        <div class="parametro">
+            <h2>Decibelímetro</h2>
+            <div class="valor">!!DB!! <span class="unidad">dB</span></div>
+            <p class="descripcion">Nivel de ruido ambiental</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos los derechos reservados - UTN FRVM - Departamento de Ingeniería Electrónica 2025</p>
+    </footer>
+
+    <script>
+        // Actualizar timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('es-AR');
+        
+        // Función para actualizar datos via AJAX (opcional)
+        function actualizarDatos() {
+            fetch('/datos')
+                .then(response => response.json())
+                .then(datos => {
+                    console.log('Datos actualizados via AJAX:', datos);
+                })
+                .catch(error => {
+                    console.log('Para ver datos actualizados, recarga la página');
+                });
+        }
+        
+        // Actualizar cada 30 segundos via AJAX (solo para monitoreo)
+        setInterval(actualizarDatos, 30000);
+    </script>
+</body>
+</html>
